@@ -15,15 +15,50 @@
             padding: 0;
         }
 
+        /** variables */
+        :root {
+            --primary-color: rgb(115, 80, 255);
+            --secondary-color: rgb(6, 2, 19);
+        }
+
+        /** custom defaults **/
+        ::-moz-selection { /* Code for Firefox */
+            color: var(--secondary-color);
+            background: var(--primary-color);
+        }
+
+        ::selection {
+            color: var(--secondary-color);
+            background: var(--primary-color);
+        }
+
         /** body */
         body {
+            display: flex;
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
-            background-color: black;
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
             padding: 2rem;
+            width: 100%;
+            max-width: 600px;
         }
         h1 {
+            font-size: 1.4rem;
+            line-height: 1.2em;
+            font-weight: 400;
+            animation: rainbow 10s ease-in-out infinite;
+            color: var(--primary-color);
+        }
+        h2 {
+            font-size: 1rem;
+            line-height: 1.2em;
             font-weight: 400;
         }
         a {
@@ -33,10 +68,82 @@
         a:hover {
             text-decoration: underline;
         }
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            list-style: none;
+            padding-left: 0.25rem;
+        }
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            position: relative;
+            padding-left: 1.25rem;
+            transition: transform 0.2s ease-in-out;
+        }
+        li:hover {
+            transform: scale(1.05);
+        }
+        li:before {
+            content: '↳';
+            position: absolute;
+            left: 0;
+            top: -2px;
+            opacity: 0.5;
+        }
+        small {
+            opacity: 0.5;
+        }
+
+        @keyframes rainbow {
+            0% { color: rgb(255, 80, 80); }
+            16.67% { color: rgb(255, 179, 80); }
+            33.33% { color: rgb(217, 255, 80); }
+            50% { color: rgb(80, 255, 118); }
+            66.67% { color: rgb(80, 127, 255); }
+            83.33% { color: var(--primary-color); }
+            100% { color: rgb(249, 80, 255); }
+        }
     </style>
 </head>
 <body>
-    <h1>blaze.design</h1>
-    <p><a href="http://x.com/0xblz" target="_blank">@0xblz</a></p>
+    <section>
+        <h1>blaze</h1>
+        <ul>
+            <li>
+                <h2>digital designer</h2>
+                <ul>
+                    <li><h2>currently at <a href="http://x.com/prtyDAO" target="_blank">PartyDAO</a></h2></li>
+                </ul>
+            </li>
+            <li>
+                <h2>recently</h2>
+                <ul>
+                    <li><h2><a href="http://party.app/" target="_blank">party.app</a></h2></li>
+                    <li><h2><a href="http://create.party.app/" target="_blank">create.party.app</a></h2></li>
+                </ul>
+            </li>
+            <li>
+                <h2>previously</h2>
+                <ul>
+                    <li><h2><a href="http://x.com/drakulaapp" target="_blank">Showtime</a> <small>2021 - 2022</small></h2></li>
+                    <li><h2><a href="http://commercejs.com" target="_blank">Commerce.js</a> <small>2019 - 2021</small></h2></li>
+                    <li><h2>Freelance / Gov <small>2012 - 2017</small></h2></li>
+                    <li><h2><a href="http://bitovi.com" target="_blank">Bitovi</a> <small>2015 - 2017</small></h2></li>
+                    <li><h2><a href="http://scribd.com" target="_blank">Scribd</a> <small>2010 - 2012</small></h2></li>
+                </ul>
+            </li>
+            <li>
+                <h2>posting</h2>
+                <ul>
+                    <li><h2><a href="http://x.com/0xblz" target="_blank">x.com/@0xblz</a></h2></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
 </body>
 </html>
