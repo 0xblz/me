@@ -6,13 +6,14 @@
     <title>blaze.design</title>
     <style>
         /** fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+       
         /** reset */
         *,
         html {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         /** variables */
@@ -35,7 +36,7 @@
         /** body */
         body {
             display: flex;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Chakra Petch', sans-serif;
             font-size: 16px;
             background-color: var(--secondary-color);
             color: var(--primary-color);
@@ -43,23 +44,33 @@
         section {
             display: flex;
             flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+            padding: 2rem;
+        }
+        aside {
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
             align-items: flex-start;
             gap: 0.5rem;
-            padding: 1rem;
-            width: 100%;
-            max-width: 600px;
         }
         h1 {
-            font-size: 1.4rem;
-            line-height: 1.2em;
+            font-size: 1.6rem;
+            line-height: 1.4em;
             font-weight: 700;
             animation: rainbow 10s ease-in-out infinite;
             color: var(--primary-color);
         }
         h2 {
+            font-size: 1.2rem;
+            line-height: 1.4em;
+            font-weight: 700;
+        }
+        h3 {
             font-size: 1rem;
-            line-height: 1.2em;
-            font-weight: 400;
+            line-height: 1.4em;
+            font-weight: 500;
         }
         a {
             color: white;
@@ -68,35 +79,13 @@
         a:hover {
             text-decoration: underline;
         }
-        ul {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-            list-style: none;
-            padding-left: 0.25rem;
-        }
-        li {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-            position: relative;
-            padding-left: 1.25rem;
-            transition: transform 0.2s ease-in-out;
-        }
-        li:hover {
-            transform: scale(1.05);
-        }
-        li:before {
-            content: '↳';
-            position: absolute;
-            left: 0;
-            top: -2px;
-            opacity: 0.5;
-        }
         small {
-            opacity: 0.5;
+            opacity: 0.6;
+            font-weight: 600;
+        }
+        span.blur {
+            filter: blur(0.5rem);
+            -webkit-filter: blur(0.5rem);
         }
 
         @keyframes rainbow {
@@ -112,37 +101,29 @@
 </head>
 <body>
     <section>
-        <h1>blaze</h1>
-        <ul>
-            <li>
-                <h2>digital designer</h2>
-            </li>
-            <li>
-                <h2>recent projects</h2>
-                <ul>
-                    <li><h2><a href="https://apps.apple.com/us/app/holy-hues/id6740889386" target="_blank">Holy Hues</a> <small>Creator</small></h2></li>
-                    <li><h2><a href="http://party.app/" target="_blank">Party.app</a> <small>@ PartyDAO</small></h2></li>
-                    <li><h2><a href="http://create.party.app/" target="_blank">Create by Party</a> <small>@ PartyDAO</small></h2></li>
-                </ul>
-            </li>
-            <li>
-                <h2>experience</h2>
-                <ul>
-                    <li><h2><a href="http://x.com/prtyDAO" target="_blank">PartyDAO</a> <small>2022 - Present</small></h2></li>
-                    <li><h2><a href="http://x.com/drakulaapp" target="_blank">Showtime</a> <small>2021 - 2022</small></h2></li>
-                    <li><h2><a href="http://commercejs.com" target="_blank">Commerce.js</a> <small>2019 - 2021</small></h2></li>
-                    <li><h2>Freelance / Gov <small>2012 - 2017</small></h2></li>
-                    <li><h2><a href="http://bitovi.com" target="_blank">Bitovi</a> <small>2015 - 2017</small></h2></li>
-                    <li><h2><a href="http://scribd.com" target="_blank">Scribd</a> <small>2010 - 2012</small></h2></li>
-                </ul>
-            </li>
-            <li>
-                <h2>posting on</h2>
-                <ul>
-                    <li><h2><a href="http://x.com/0xblz" target="_blank">x.com/@0xblz</a></h2></li>
-                </ul>
-            </li>
-        </ul>
+        <aside>
+            <h1>blaze,<br>digital designer</h1>
+        </aside>
+        <aside>
+            <h2>💾 recent projects</h2>
+            <h3><a href="https://apps.apple.com/us/app/holy-hues/id6740889386" target="_blank">Holy Hues</a> <small>Creator, 2025</small></h3>
+            <h3><span class="blur">[Redacted]</span> <small>Designer, 2024 - 2025</small></h3>
+            <h3><a href="http://party.app/" target="_blank">Party App</a> <small>Designer, 2024</small></h3>
+            <h3><a href="http://create.party.app/" target="_blank">Create by Party</a> <small>Designer, 2024</small></h3>
+        </aside>
+        <aside>
+            <h2>💼 experience</h2>
+            <h3><a href="http://x.com/prtyDAO" target="_blank">PartyDAO</a><br><small>Designer, 2022 - Present</small></h3> 
+            <h3><a href="http://x.com/drakulaapp" target="_blank">Showtime</a><br><small>Founding Designer, 2021 - 2022</small></h3>
+            <h3><a href="http://commercejs.com" target="_blank">Commerce.js</a><br><small>Lead Designer, 2019 - 2021</small></h3>
+            <h3>Freelance / Gov<br><small>3D Designer, 2012 - 2017</small></h3>
+            <h3><a href="http://bitovi.com" target="_blank">Bitovi</a><br><small>UI Engineer, 2015 - 2017</small></h3>
+            <h3><a href="http://scribd.com" target="_blank">Scribd</a><br><small>Designer, 2010 - 2012</small></h3>
+        </aside>
+        <aside>
+            <h2>💬 posting On</h2>
+            <h3><a href="http://x.com/0xblz" target="_blank">x.com/@0xblz</a></h3>
+        </aside>
     </section>
 </body>
 </html>
